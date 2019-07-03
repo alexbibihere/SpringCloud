@@ -1,5 +1,6 @@
 package com.example.provideTicket.controller;
 
+import com.example.provideTicket.entity.User;
 import com.example.provideTicket.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +14,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TicketController {
 
+
     @Autowired
     TicketService   ticketService;
 
     @RequestMapping("/ticket")
     public String getTicket(){
        return ticketService.getTicket();
+    }
+
+    @RequestMapping("/hello")
+    public User hello(){
+        User user = new User();
+        user.setId("1");
+        user.setUserName("provider");
+        return user;
     }
 }
