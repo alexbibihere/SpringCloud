@@ -17,7 +17,7 @@ public class ConsumerUserApplication {
 
 
 
-//	@LoadBalanced	//使用负载均衡机制
+	@LoadBalanced	//使用负载均衡机制
 	@Bean
 	public RestTemplate restTemplate(){
 	return new RestTemplate();
